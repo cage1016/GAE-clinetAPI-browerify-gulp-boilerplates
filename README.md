@@ -39,7 +39,7 @@ $ gulp build
 $ dev_appserver.py .
 ```
 
-#### 7. modify application
+#### 6. modify application
 
 go `app.yaml` to modify your `your-application-id`
 
