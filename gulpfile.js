@@ -31,6 +31,7 @@ gulp.task('css', function () {
     var vendorCSSStream = gulp.src([
         './bower_components/todc-bootstrap/dist/css/bootstrap.css',
         './bower_components/todc-bootstrap/dist/css/tdoc-bootstrap.css',
+        './bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
         './assets/stylesheet/custom.css'
     ])
         .pipe(concat('main.min.css'))
@@ -70,9 +71,11 @@ gulp.task('javascript:browserify', function () {
     browserify().transform(literalify.configure({
         // map module names with global objects
         'jquery': 'window.$',
-        'bootstrap': 'window.$'
+        'bootstrap': 'window.$',
+        'eonasdan-bootstrap-datetimepicker': 'window.$',
+        'moment': 'window.moment'
     }))
-    //b.add('./assets/javascript/index.js');
+      .add('./assets/javascript/index.js')
       .bundle()
         .pipe(source('bundle.js'))
         .pipe(buffer())
@@ -89,6 +92,8 @@ gulp.task('javascript:static', function () {
     var vendorJSStream = gulp.src([
         './bower_components/jquery/dist/jquery.js',
         './bower_components/todc-bootstrap/dist/js/bootstrap.js',
+        './bower_components/moment/min/moment.min.js',
+        './bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js'
     ])
         .pipe(concat('vendor.js'))
         .pipe(uglify())

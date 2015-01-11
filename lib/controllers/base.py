@@ -35,6 +35,7 @@ class BaseHandler(webapp2.RequestHandler):
     values = {
       'WEB_CLIENT_ID': config.WEB_CLIENT_ID,
       'DEVELOPER_KEY': config.DEVELOPER_KEY,
+      'upath_info': self.request.upath_info,
       'login_url': users.create_login_url('/'),
       'logout_url': users.create_logout_url('/'),
       'credentials': self.credentials,
