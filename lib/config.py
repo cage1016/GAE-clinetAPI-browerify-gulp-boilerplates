@@ -2,11 +2,10 @@ __author__ = 'cage'
 
 from oauth2client.appengine import OAuth2Decorator
 
-# miwatermarker project
-WEB_CLIENT_ID = '449185255153-s516l7g99ssjuc5sv6eg81j52d8aid7u.apps.googleusercontent.com'
-WEB_CLIENT_ID_SECRET = '31vrbHuWh5d7YwIBFjWYKZnY'
+WEB_CLIENT_ID = 'your-web-client_id'
+WEB_CLIENT_ID_SECRET = 'you-web-client-secret'
 
-DEVELOPER_KEY = 'AIzaSyBZtDEOMCVfKtmlE_7YEvkrzEO4Qxklg3I';
+DEVELOPER_KEY = 'your-developer-key'
 
 API_SCOPE = ['https://www.googleapis.com/auth/userinfo.email',
              'https://www.googleapis.com/auth/plus.login',
