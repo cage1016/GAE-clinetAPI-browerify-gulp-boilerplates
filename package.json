@@ -33,7 +33,7 @@
     "rework": "^1.0.1",
     "rework-plugin-inline": "^1.0.1",
     "rework-suit": "^4.0.0",
-    "router": "^1.0.0-beta.2",
+    "router": "git+https://git@github.com/philipwalton/router.git",
     "streamqueue": "^0.1.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
