@@ -33,8 +33,12 @@ $ unzip google-api-python-client-gae-1.2.zip
 $ gulp build
 ```
 
-#### 5. check result
+#### 5. Check result
 
 ```sh
 $ dev_appserver.py .
 ```
+
+#### 6. Add WEB_CLIENT_ID, WEB_CLIENT_ID_SECRET, DEVELOPER_KEY
+
+go `lib/config.py` to modify your `WEB_CLIENT_ID`, `WEB_CLIENT_ID_SECRET` and `DEVELOPER_KEY` as you need.
