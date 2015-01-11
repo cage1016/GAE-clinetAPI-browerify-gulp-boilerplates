@@ -3,6 +3,7 @@
 import webapp2
 
 from lib.controllers.base import RevokeTokenHandler, BaseHandler
+from lib.controllers.about_handler import AboutHandler
 from lib.config import decorator
 
 
@@ -14,6 +15,7 @@ class MainHandler(BaseHandler):
 
 routes = [
   ('/', MainHandler),
+  ('/about', AboutHandler),
   ('/revoke_token', RevokeTokenHandler),
   (decorator.callback_path, decorator.callback_handler())
 ]
