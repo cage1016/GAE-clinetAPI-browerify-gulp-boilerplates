@@ -1,36 +1,40 @@
-google-api-python-client
-========================
+# Getting Started
 
-Download
+#### 1. Install gulp, browserify globally:
 
-[google-api-python-client-gae-1.2.zip](https://code.google.com/p/google-api-python-client/downloads/detail?name=google-api-python-client-gae-1.2.zip&can=2&q=)
-
+```sh
+$ npm install --global gulp
+$ npm install --global browserify
 ```
+
+#### 2. Clone repo from github:
+
+```sh
+$ git clone https://github.com/cage1016/GAE-clinetAPI-browerify-gulp-boilerplates.git
+```
+
+#### 2. Install proejct module from package.json, bower file:
+
+```sh
+$ npm install
+$ bower install
+```
+
+#### 4. Install Google API Python client
+
+```sh
 $ wget https://google-api-python-client.googlecode.com/files/google-api-python-client-gae-1.2.zip
+$ unzip google-api-python-client-gae-1.2.zip
 ```
 
+#### 4. Run gulp:
 
-TODC Bootstrap
-=======================
-
-Download
-
-[TODC Bootstrap](http://todc.github.io/todc-bootstrap/)
-
-```
-$ wget https://github.com/todc/todc-bootstrap/releases/download/v3.3.1-3.3.1/todc-bootstrap-3.3.1-3.3.1-dist.zip
+```sh
+$ gulp build
 ```
 
-browerify + gulp
-=======================
+#### 5. check result
 
-## literalify
-
-[pluma/literalify](https://github.com/pluma/literalify)
-
-## Description
-
-- [Browserify - Bring Nodejs modules to browsers](http://truongtx.me/2014/03/20/browserify-bring-nodejs-modules-to-browser)
-
-If the libraries you want to browserify are designed for client-side environment (browsers), do not try to find them on npm and then browserify them to the client. Because for many libraries like jquery, jquery-ui, twitter bootstrap, they relies on global object to work properly. The solution is just load those libraries through the script tag like the traditional way that we used to do (can also be installed with a package manager like bower) and use browserify with literalify transform to pretend those libraries are actual CommonJS modules.
-
+```sh
+$ dev_appserver.py .
+```
