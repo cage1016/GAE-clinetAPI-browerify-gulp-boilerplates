@@ -1,0 +1,21 @@
+*~
+*.pyc
+.DS_Store
+.idea
+bower_components
+node_modules
+public
+*.p12
+*.pem
+.tmp
+
+#library
+oauth2client
+httplib2
+apiclient
+cloudstorage
+
+#library source
+sources
+*.zip
+
