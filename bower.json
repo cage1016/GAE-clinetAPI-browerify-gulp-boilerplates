@@ -1,0 +1,18 @@
+{
+  "name": "miwatermark-gulp",
+  "version": "0.0.0",
+  "authors": [
+    "Cage <cage@mitac.com.tw>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "todc-bootstrap": "~3.0.2"
+  }
+}
