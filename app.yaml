@@ -9,6 +9,10 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
+- url: /public
+  static_dir: public
+  secure: always
+
 - url: /.*
   script: lib.app.router
   secure: always
