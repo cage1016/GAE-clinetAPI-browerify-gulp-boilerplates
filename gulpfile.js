@@ -21,6 +21,7 @@ var livereload = require('gulp-livereload');
 var streamify = require('gulp-streamify');
 var notify = require('gulp-notify');
 var glob = require('glob');
+var react = require("gulp-react");
 
 // External dependencies you do not want to rebundle while developing,
 // but include in your application deployment
@@ -120,6 +121,7 @@ var browserifyTask = function (options) {
     console.log('Building VENDORS bundle');
     gulp.src([
       './bower_components/jquery/dist/jquery.js',
+      './bower_components/react/react.js',
       './bower_components/todc-bootstrap/dist/js/bootstrap.js',
       './bower_components/moment/min/moment.min.js',
       './bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js',
@@ -186,14 +188,8 @@ gulp.task('lint', function () {
     './gulpfile.js',
     './assets/javascript/**/*.js'
   ])
-    .pipe(jshint({
-      browser: true,
-      boss: true,
-      expr: true,
-      node: true,
-      scripturl: true,
-      quotmark: 'single'
-    }))
+    .pipe(react())
+    .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(jshint.reporter('fail'));
 });
