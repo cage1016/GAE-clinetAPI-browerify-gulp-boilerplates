@@ -4,7 +4,7 @@
 
 ```sh
 $ npm install --global gulp
-$ npm install --global browserify
+$ npm install --globgal browserify
 ```
 
 #### 2. Clone repo from github:
@@ -147,4 +147,12 @@ gulp.task('javascript:browserify', function () {
 > If the libraries you want to browserify are designed for client-side environment (browsers), do not try to find them on npm and then browserify them to the client. Because for many libraries like jquery, jquery-ui, twitter bootstrap, they relies on global object to work properly. The solution is just load those libraries through the script tag like the traditional way that we used to do (can also be installed with a package manager like [bower](http://bower.io/)) and use browserify with [literalify](https://github.com/pluma/literalify) transform to pretend those libraries are actual CommonJS modules.
 > by - [Browserify - Bring Nodejs modules to browsers](http://truongtx.me/2014/03/20/browserify-bring-nodejs-modules-to-browser/)
 
+
+## Change logs
+
+### 2015/1/15
+
+- modify gulpfile javascript/css/html livereload support.
+- add gulp browserify react support. 
+- add new `react` route to include react component.
 

@@ -24,6 +24,7 @@
       <ul class="nav navbar-nav">
         <li {% if upath_info == '/' %}class="active"{% endif %}><a href="/">Home</a></li>
         <li {% if upath_info == '/about' %}class="active"{% endif %}><a href="/about">About</a></li>
+        <li {% if upath_info == '/react' %}class="active"{% endif %}><a href="/react">React</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/">Default</a></li>
@@ -36,21 +37,6 @@
 
 <div class="container">
 
-  <!-- Main component for a primary marketing message or call to action -->
-  <div class="jumbotron">
-    <h1>Masthead example</h1>
-
-    <p>This example is a quick exercise to illustrate how the default, static and fixed to top masthead work. It
-      includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-
-    <p>To see the difference between static and fixed top mastheads, just scroll.</p>
-
-    <p>
-      <a class="btn btn-lg btn-primary" href="../../components/#navbar-masthead" role="button">View masthead
-        docs &raquo;</a>
-    </p>
-  </div>
-
   {% block content %}{% endblock %}
 
 </div>
@@ -62,11 +48,7 @@
     <p class="text-muted">Place sticky footer content here.</p>
   </div>
 </footer>
-
-<!-- inject:js -->
-<script src="/public/javascript/vendor.js"></script>
-<!-- endinject -->
-
+<script src="/public/javascript/vendors.js"></script>
 <script src="/public/javascript/bundle.js"></script>
 
 {% block foot_scripts %}{% endblock %}
