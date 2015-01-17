@@ -4,7 +4,7 @@
 
 ```sh
 $ npm install --global gulp
-$ npm install --global browserify
+$ npm install --globgal browserify
 ```
 
 #### 2. Clone repo from github:
@@ -38,3 +38,11 @@ $ gulp build
 ```sh
 $ dev_appserver.py .
 ```
+
+## Change logs
+
+### 2015/1/15
+
+- modify gulpfile javascript/css/html livereload support.
+- add gulp browserify react support. 
+- add new `react` route to include react component.

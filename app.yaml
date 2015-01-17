@@ -1,5 +1,5 @@
-application: miwatermark-gulp
-version: 1
+application: gae-lab-001
+version: github
 runtime: python27
 api_version: 1
 threadsafe: yes
