@@ -150,6 +150,12 @@ gulp.task('javascript:browserify', function () {
 
 ## Change logs
 
+### 2015/1/28
+
+- add `angular` spa route.
+- modify `gulefile.js` to browerify with new spa route.
+- [SPA.md](SPA.md)
+
 ### 2015/1/15
 
 - modify gulpfile javascript/css/html livereload support.
