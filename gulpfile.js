@@ -22,6 +22,7 @@ var streamify = require('gulp-streamify');
 var notify = require('gulp-notify');
 var glob = require('glob');
 var react = require("gulp-react");
+var ngHtml2Js = require("gulp-ng-html2js");
 
 // External dependencies you do not want to rebundle while developing,
 // but include in your application deployment
@@ -34,7 +35,9 @@ var bowerDependencies = {
   'bootstrap': 'window.$',
   'eonasdan-bootstrap-datetimepicker': 'window.$',
   'moment': 'window.moment',
-  'react': 'window.React'
+  'react': 'window.React',
+  'angular': 'window.angular',
+  'angular-route': 'window.angular'
 };
 
 var browserifyTask = function (options) {
@@ -57,6 +60,7 @@ var browserifyTask = function (options) {
     var start = Date.now();
     console.log('Building APP bundle');
     appBundler.bundle()
+      //.pipe(ngAnnotate())
       .on('error', gutil.log)
       .pipe(source('bundle.js'))
       .pipe(gulpif(!options.development, streamify(uglify())))
@@ -121,6 +125,8 @@ var browserifyTask = function (options) {
     console.log('Building VENDORS bundle');
     gulp.src([
       './bower_components/jquery/dist/jquery.js',
+      './bower_components/angular/angular.js',
+      './bower_components/angular-route/angular-route.js',
       './bower_components/react/react.js',
       './bower_components/todc-bootstrap/dist/js/bootstrap.js',
       './bower_components/moment/min/moment.min.js',
@@ -171,6 +177,35 @@ var htmlTask = function (options) {
 };
 
 
+var nghtmlTask = function (options) {
+  if (options.development) {
+    var run = function () {
+      console.log(arguments);
+      var start = new Date();
+      console.log('Building ng-html2js bundle');
+      gulp.src(options.src)
+        .pipe(ngHtml2Js({
+          moduleName: "MyAwesomePartials",
+          prefix: "/partials"
+        }))
+        .pipe(concat("partials.min.js"))
+        .pipe(uglify())
+        .pipe(gulp.dest("./public/javascript"));
+    };
+
+    run();
+    gulp.watch(options.src, run);
+  } else {
+    gulp.src(options.src)
+      .pipe(ngHtml2Js({
+        moduleName: "MyAwesomePartials",
+        prefix: "/partials"
+      }))
+      .pipe(gulp.dest("./public/javascript"));
+  }
+};
+
+
 gulp.task('images', function () {
   gulp.src('./assets/images/**/*')
     .pipe(gulp.dest('./public/images'));
@@ -217,6 +252,11 @@ gulp.task('default', ['lint', 'fonts', 'images'], function () {
 
   htmlTask({
     src: './templates/**/*'
+  });
+
+  nghtmlTask({
+    development: true,
+    src: './assets/javascript/**/*.html'
   });
 
 });
