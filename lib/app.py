@@ -5,6 +5,7 @@ import webapp2
 from lib.controllers.base import RevokeTokenHandler, BaseHandler
 from lib.controllers.about_handler import AboutHandler
 from lib.controllers.react_handler import ReactHandler
+from lib.controllers.spa_handler import SPAHandler
 from lib.config import decorator
 
 
@@ -18,6 +19,7 @@ routes = [
   ('/', MainHandler),
   ('/about', AboutHandler),
   ('/react', ReactHandler),
+  ('/spa', SPAHandler),
   ('/revoke_token', RevokeTokenHandler),
   (decorator.callback_path, decorator.callback_handler())
 ]

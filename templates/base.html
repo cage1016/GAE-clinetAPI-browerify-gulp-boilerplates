@@ -25,6 +25,7 @@
         <li {% if upath_info == '/' %}class="active"{% endif %}><a href="/">Home</a></li>
         <li {% if upath_info == '/about' %}class="active"{% endif %}><a href="/about">About</a></li>
         <li {% if upath_info == '/react' %}class="active"{% endif %}><a href="/react">React</a></li>
+        <li {% if upath_info == '/spa' %}class="active"{% endif %}><a href="/spa">Spa</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/">Default</a></li>
@@ -50,6 +51,7 @@
 </footer>
 <script src="/public/javascript/vendors.js"></script>
 <script src="/public/javascript/bundle.js"></script>
+<script src="/public/javascript/partials.min.js"></script>
 
 {% block foot_scripts %}{% endblock %}
 </body>
